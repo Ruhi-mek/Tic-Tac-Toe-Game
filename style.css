@@ -215,7 +215,7 @@ body {
 .current-player {
     font-size: 1.1rem;
     font-weight: 600;
-    color: var(--accent);
+    color: var(--primary);
     padding: 10px 20px;
     background: rgba(157, 141, 241, 0.1);
     border-radius: var(--radius);
@@ -225,13 +225,13 @@ body {
 .game-content {
     display: grid;
     grid-template-columns: 250px 1fr;
-    gap: 30px;
+    gap: 40px;
     align-items: start;
 }
 
 /* ===== Stats Panel ===== */
 .stats-panel {
-    background: var(--light-text);
+    background: var(--background);
     border-radius: var(--radius);
     padding: 25px;
     box-shadow: var(--shadow);
@@ -241,7 +241,7 @@ body {
 .stats-header {
     font-size: 1.3rem;
     font-weight: 700;
-    color: var(--primary);
+    color: var(--border-color);
     margin-bottom: 20px;
     text-align: center;
 }
@@ -254,7 +254,7 @@ body {
 }
 
 .stat-item {
-    background: linear-gradient(135deg, rgba(157, 141, 241, 0.1) 0%, rgba(205, 231, 240, 0.1) 100%);
+    background: linear-gradient(135deg, var(--light-text) 0%,  var(--secondary) 100%);
     padding: 15px;
     border-radius: var(--radius);
     border-left: 4px solid var(--primary);
@@ -297,44 +297,40 @@ body {
 .board {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-    background: var(--light-text);
-    padding: 30px;
+    /* gap: 10px; */
+    background: var(--background);
+    padding: 20px;
     border-radius: var(--radius);
     box-shadow: var(--shadow);
     aspect-ratio: 1;
 }
 
 .cell {
-    background: linear-gradient(135deg, var(--background) 0%, var(--secondary) 100%);
-    border: 3px solid var(--primary);
-    border-radius: var(--radius);
+    border: 6px solid var(--border-color);
+    border-left: none;
+    border-top: none;
     display: flex;
     align-items: center;
-    justify-content: center;
-    font-size: 3rem;
+    justify-content: center;    
+    font-size: 4rem;
     font-weight: 700;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    color: var(--accent);
+    cursor: pointer;        
 }
 
-.cell:hover:not(.disabled) {
-    background: linear-gradient(135deg, var(--secondary) 0%, var(--background) 100%);
-    transform: scale(1.05);
-    box-shadow: 0 8px 20px rgba(157, 141, 241, 0.2);
+.cell:nth-child(3n) {
+  border-right: none;
 }
 
-.cell.disabled {
-    cursor: not-allowed;
+.cell:nth-last-child(-n+3) {
+  border-bottom: none;
 }
 
 .cell.x {
-    color: var(--primary);
+    color: var(--light-text);
 }
 
 .cell.o {
-    color: var(--accent);
+    color: var(--secondary);
 }
 
 /* ===== Modal ===== */

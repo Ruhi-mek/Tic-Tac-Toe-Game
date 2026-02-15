@@ -1,8 +1,7 @@
-// ===== Game State =====
 const gameState = {
     board: Array(9).fill(null),
     currentPlayer: 'x',
-    gameMode: null, // 'single' or 'two-player'
+    gameMode: null, 
     gameActive: true,
     player1Name: 'Player 1',
     player2Name: 'Player 2',
@@ -14,7 +13,6 @@ const gameState = {
     }
 };
 
-// ===== DOM Elements =====
 const menuScreen = document.getElementById('menuScreen');
 const setupScreen = document.getElementById('setupScreen');
 const gameScreen = document.getElementById('gameScreen');
@@ -37,7 +35,6 @@ const player1NameInput = document.getElementById('player1Name');
 const player2NameInput = document.getElementById('player2Name');
 const player2Group = document.getElementById('player2Group');
 
-// ===== Winning Combinations =====
 const winningCombinations = [
     [0, 1, 2],
     [3, 4, 5],
@@ -49,7 +46,6 @@ const winningCombinations = [
     [2, 4, 6]
 ];
 
-// ===== Event Listeners =====
 singlePlayerBtn.addEventListener('click', () => startSetup('single'));
 twoPlayerBtn.addEventListener('click', () => startSetup('two-player'));
 backBtn.addEventListener('click', goToMenu);
@@ -63,7 +59,6 @@ cells.forEach(cell => {
     cell.addEventListener('click', handleCellClick);
 });
 
-// ===== Screen Navigation =====
 function showScreen(screen) {
     document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
     screen.classList.add('active');
@@ -105,7 +100,6 @@ function goToMenu() {
     closeResultModal();
 }
 
-// ===== Game Logic =====
 function handleCellClick(e) {
     const cell = e.target;
     const index = parseInt(cell.getAttribute('data-index'));
@@ -276,7 +270,6 @@ function updateStats() {
     document.getElementById('gamesPlayed').textContent = gameState.stats.gamesPlayed;
 }
 
-// ===== Modal Management =====
 function showResultModal(title, message) {
     document.getElementById('resultTitle').textContent = title;
     document.getElementById('resultMessage').textContent = message;
@@ -313,7 +306,6 @@ function resetStats() {
     }
 }
 
-// ===== Board Interaction =====
 function disableBoardInteraction() {
     cells.forEach(cell => cell.classList.add('disabled'));
 }
@@ -322,5 +314,4 @@ function enableBoardInteraction() {
     cells.forEach(cell => cell.classList.remove('disabled'));
 }
 
-// ===== Initialize =====
 updateStats();

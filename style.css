@@ -1,19 +1,19 @@
-/* ===== CSS Variables & Theme ===== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
 :root {
     --primary: #9D8DF1;
     --secondary: #CDE7F0;
-    --background: #F7F7FF;
+    --background: #a8a8f1;
     --accent: #5E60CE;
     --dark-text: #2D3748;
     --light-text: #FFFFFF;
-    --border-color: #E2E8F0;
+    --border-color: #17191c;
     --success: #48BB78;
     --danger: #F56565;
-    --radius: 12px;
+    --radius: 18px;
     --shadow: 0 10px 30px rgba(93, 96, 206, 0.15);
 }
 
-/* ===== Reset & Base Styles ===== */
 * {
     margin: 0;
     padding: 0;
@@ -21,11 +21,14 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background: linear-gradient(135deg, var(--background) 0%, #f0ebff 100%);
+    background-image: url('./assets/background.jpg');
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -33,14 +36,12 @@ body {
     color: var(--dark-text);
 }
 
-/* ===== Container ===== */
 .container {
     width: 100%;
     max-width: 1200px;
     padding: 20px;
 }
 
-/* ===== Screen Management ===== */
 .screen {
     display: none;
     animation: fadeIn 0.3s ease-in-out;
@@ -63,7 +64,7 @@ body {
 
 /* ===== Card Styling ===== */
 .card {
-    background: var(--light-text);
+    background: var(--background);
     border-radius: var(--radius);
     padding: 40px;
     box-shadow: var(--shadow);
@@ -72,18 +73,17 @@ body {
     text-align: center;
 }
 
-/* ===== Typography ===== */
 .title {
     font-size: 2.5rem;
     font-weight: 700;
-    color: var(--primary);
+    color: var(--dark-text);
     margin-bottom: 8px;
     letter-spacing: -0.5px;
 }
 
 .subtitle {
     font-size: 1.1rem;
-    color: var(--accent);
+    color: var(--dark-text);
     font-weight: 500;
     margin-bottom: 30px;
 }
@@ -118,23 +118,12 @@ body {
     text-transform: capitalize;
 }
 
-.btn-primary {
-    background: var(--primary);
-    color: var(--light-text);
-}
-
-.btn-primary:hover {
-    background: var(--accent);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(157, 141, 241, 0.3);
-}
-
-.btn-secondary {
+.btn-primary, .btn-secondary {
     background: var(--secondary);
     color: var(--dark-text);
 }
 
-.btn-secondary:hover {
+.btn-primary:hover, .btn-secondary:hover {
     background: var(--primary);
     color: var(--light-text);
     transform: translateY(-2px);

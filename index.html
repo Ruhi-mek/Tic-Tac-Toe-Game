@@ -5,36 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic Tac Toe - Solo or Duo</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preload" href="./assets/background.jpg" as="image">
     <script defer src="script.js"></script>
 </head>
 <body>
     <div class="container">
-        <!-- Menu Screen -->
         <div id="menuScreen" class="screen active">
             <div class="card">
                 <div class="screen-header">
-                    <h1 class="title">Tic Tac Toe</h1>
+                    <h1 class="title">Welcome to Tic Tac Toe😊</h1>
                     <p class="subtitle">Solo or Duo</p>
                 </div>
                 <div class="button-group">
                     <button class="btn btn-primary" id="singlePlayerBtn">
-                        <span class="btn-icon">🎮</span>
-                        Single Player
+                        <span class="btn-icon">🎮</span> Single Player
                     </button>
                     <button class="btn btn-secondary" id="twoPlayerBtn">
-                        <span class="btn-icon">👥</span>
-                        Two Player
+                        <span class="btn-icon">👥</span> Two Player 
                     </button>
                 </div>
             </div>
         </div>
 
-        <!-- Setup Screen -->
         <div id="setupScreen" class="screen">
             <div class="card">
                 <div class="screen-header">
                     <h2 class="title">Player Setup</h2>
-                    <p class="subtitle">Enter player names</p>
+                    <p class="subtitle">Enter player name/s</p>
                 </div>
                 
                 <form id="setupForm" class="form">
